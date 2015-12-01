@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Evidence výpůjček</string>
+    <string name="menu_settings_title">Nastavení</string>
+    <string name="menu_clear_title">Smazat načtená data</string>
+    <string name="settings_url_title">URL pro načítání informací o jednotkách</string>
+    <string name="settings_url_title_desc">{id} bude nahrazeno načteným kódem</string>
+    <string name="label_empty_booklist">Přiložte přístroj k čipu a vyčkejte načtení kódu.</string>
+    <string name="label_nonfc">Váš přístroj nepodporuje technologii NFC.</string>
+    <string name="loading_message">Načítání informací pro %1$s ...</string>
+    <string name="read_error">Chyba při čtení. Opakujte.</string>  
+    <string name="error_dialog_title">Popis chyby</string>
+    <string name="menu_upload">Odeslat na server</string>
+    <string name="settings_upload_url_title">URL pro odeslání informací o výpůjčkách</string>
+    <string name="settings_upload_url_title_desc"></string>
+    <string name="upload_title">Prosím čekejte</string>
+    <string name="upload_message">Probíhá odesílání informací na server</string>
+    <string name="menu_reload_names">Načíst názvy</string>
+    <string name="settings_use_auth">Používat autentizaci pro webové služby</string>
+    <string name="settings_use_auth_desc"></string>
+    <string name="settings_auth_user">Už. jméno</string>
+    <string name="settings_auth_password">Heslo</string>
+
+    <string name="settings_url_header">Webové služby pro načítání/odesílání dat</string>
+    <string name="settings_auth_header">Autentizace při odesílání dat</string>
+
+</resources>

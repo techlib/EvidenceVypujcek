@@ -1,0 +1,3 @@
+#!/bin/csh
+
+/exlibris/product/bin/perl /exlibris/aleph/u22_1/alephe/scripts/circ-logger-30.pl

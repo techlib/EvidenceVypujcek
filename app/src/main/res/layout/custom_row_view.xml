@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:baselineAligned="false"
+    android:padding="8dip" >
+
+    
+    <LinearLayout
+        android:id="@+id/loaded_part"
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:orientation="horizontal" >
+        
+        <CheckBox android:id="@+id/to_send"
+	        android:layout_width="wrap_content"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:gravity="center_vertical"
+	        android:focusable="false"
+	        android:clickable="false"
+	       />
+    
+	    <LinearLayout
+	        android:id="@+id/book_info"
+	        android:layout_width="0dip"
+	        android:layout_height="fill_parent"
+	        android:layout_weight="1"
+	        android:orientation="vertical" >
+	        
+	        <TextView
+	            android:id="@+id/name"
+	            android:layout_width="fill_parent"
+	            android:layout_height="0dip"
+	            android:layout_weight="1"
+	            android:ellipsize="marquee"
+	            android:textSize="18sp" />
+	
+	        <TextView
+	            android:id="@+id/author"
+	            android:layout_width="fill_parent"
+	            android:layout_height="0dip"
+	            android:layout_weight="1"
+	
+	            android:textSize="18sp" />
+	
+	        <TextView
+	            android:id="@+id/code"
+	            android:layout_width="fill_parent"
+	            android:layout_height="0dip"
+	            android:layout_weight="1" />
+	    </LinearLayout>
+	</LinearLayout>
+	    
+	    
+    <LinearLayout
+        android:id="@+id/loading_part"
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+
+        android:visibility="gone"
+        android:orientation="vertical"  >
+
+        <TextView
+            android:id="@+id/tmp_code"
+            android:layout_width="wrap_content"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:gravity="center_vertical"
+            android:padding="10dip"
+            android:textSize="20sp" />
+    </LinearLayout>
+    
+    
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="?android:attr/listPreferredItemHeight"
+        android:gravity="right" >
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:gravity="center_vertical"
+            android:padding="10dip"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:title="@string/settings_url_header"
+        android:key="pref_key_storage_settings">
+
+    <EditTextPreference
+        android:inputType="textUri"
+        android:key="service_url"
+        android:title="@+string/settings_url_title" 
+        android:defaultValue=""
+        android:summary="@+string/settings_url_title_desc"/>
+
+    <EditTextPreference
+        android:inputType="textUri"
+        android:key="service_upload_url"
+        android:title="@+string/settings_upload_url_title" 
+        android:defaultValue=""
+        android:summary="@+string/settings_upload_url_title_desc"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/settings_auth_header"
+        android:key="pref_key_storage_settings">
+
+    <CheckBoxPreference
+        android:key="service_use_auth"
+        android:title="@+string/settings_use_auth"
+        android:defaultValue="false"
+        android:summary="@+string/settings_use_auth_desc"/>
+
+    <EditTextPreference
+        android:inputType="text"
+        android:key="service_auth_user"
+        android:title="@+string/settings_auth_user"
+        android:dependency="service_use_auth"
+        android:defaultValue="" />
+
+    <EditTextPreference
+        android:inputType="textPassword"
+        android:key="service_auth_password"
+        android:title="@+string/settings_auth_password"
+        android:defaultValue=""
+        android:dependency="service_use_auth"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
