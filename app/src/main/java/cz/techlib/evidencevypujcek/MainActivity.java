@@ -160,30 +160,40 @@ public class MainActivity extends Activity {
 
     public void onNewIntent(Intent intent) {
         Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+        byte[] id = tag.getId();
         NfcV nfcMessage = NfcV.get(tag);
 
         try {
             nfcMessage.connect();
 
-            byte[] results = new byte[128];
             int resultIndex = 0;
             int blockIndex = 0;
-            boolean hasMoreData = true;
+            int blocks = 4; // 0 means 1 block, so it's +1 than 'blocks'
 
-            while (hasMoreData) {
-                byte[] data = nfcMessage.transceive((new byte[]{0, 32, (byte) blockIndex}));
-                blockIndex++;
-                for (int b = 1; b < 5; b++) {
+            byte[] cmd = new byte[]{
+                    (byte)0x60,
+                    (byte)0x23,
+                    (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00,  // placeholder for tag UID
+                    (byte)blockIndex,
+                    (byte)blocks};
 
+            System.arraycopy(id, 0, cmd, 2, 8);
+            byte[] data = nfcMessage.transceive(cmd);
+
+            int start = 2;
+            byte[] results = new byte[data.length];
+
+            for (int i = 0; i <= blocks; i++) {
+                for (int b = start; b < start + 4; b++) {
                     // First data block may contain zero bytes, which does not denote end of book code.
                     // this caused troubles with some books
-                    if (data[b] == 0 && blockIndex > 1) {
-                        hasMoreData = false;
+                    if (data[b] == 0 && i > 1) {
                         break;
                     }
                     results[resultIndex] = data[b];
                     resultIndex++;
                 }
+                start += 5;
             }
             nfcMessage.close();
 
