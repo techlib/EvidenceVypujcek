@@ -114,6 +114,10 @@ public class BookAsyncUploader extends AsyncTask<Void, String, Void> {
                     }
                     reply = sb.toString();
 
+                    if (reply.contains("<status>LOAN</status>")) {
+                        throw new LoanException("This book is loaned: ".concat(reply));
+                    }
+
                     if (!reply.contains("<status>ACK</status>")) {
                         throw new Exception("Wrong answer from server: ".concat(reply));
                     }
@@ -124,7 +128,9 @@ public class BookAsyncUploader extends AsyncTask<Void, String, Void> {
 
                 connection.disconnect();
                 item.put("sent", "true");
-
+            } catch (LoanException e) {
+                item.put("loan", "true");
+                item.put("sent", "true");
             } catch (Exception e) {
                 item.put("error", "true");
                 item.put("error_message", e.getMessage());

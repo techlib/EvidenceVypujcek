@@ -92,7 +92,9 @@ public class BookListAdapter extends ArrayAdapter<HashMap<String, String>> {
 	            int color;
 	            if(o.get("error") == "true" && o.get("sent") == "false") {
 	            	color = android.graphics.Color.RED;
-	            } else {
+	            } else if (o.get("loan") == "true" && o.get("sent") == "true") {
+                    color = android.graphics.Color.BLUE;
+                } else {
 	            	if(o.get("sent") == "true") {
 	            		color = android.graphics.Color.rgb(200, 200, 200);
 		            } else {
