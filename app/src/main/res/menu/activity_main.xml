@@ -7,7 +7,10 @@
         android:id="@+id/menu_reload_names"
         android:showAsAction="ifRoom|withText"
         android:title="@string/menu_reload_names" />
-    
+    <item
+        android:id="@+id/menu_select_all"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menu_select_all" />
     <item
         android:id="@+id/menu_clear"
         android:title="@string/menu_clear_title">

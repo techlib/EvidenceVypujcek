@@ -107,6 +107,10 @@ public class MainActivity extends Activity {
             case R.id.menu_reload_names:
                 reloadNames();
                 return true;
+
+            case R.id.menu_select_all:
+                selectAll();
+                return true;
         }
         return true;
     }
@@ -131,6 +135,14 @@ public class MainActivity extends Activity {
                         sharedPref.getString("service_url", ""));
                 p.execute(item);
             }
+        }
+    }
+
+    private void selectAll() {
+        for (int i = 0; i < this.adapter.getCount(); i++) {
+            HashMap<String, String> item = this.adapter.getItem(i);
+                item.put("to_send", "true");
+                adapter.notifyDataSetChanged();
         }
     }
 

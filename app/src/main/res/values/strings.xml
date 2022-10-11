@@ -11,6 +11,7 @@
     <string name="read_error">Chyba při čtení. Opakujte.</string>  
     <string name="error_dialog_title">Popis chyby</string>
     <string name="menu_upload">Odeslat na server</string>
+    <string name="menu_select_all">Vybrat vše</string>
     <string name="settings_upload_url_title">URL pro odeslání informací o výpůjčkách</string>
     <string name="settings_upload_url_title_desc"></string>
     <string name="upload_title">Prosím čekejte</string>
