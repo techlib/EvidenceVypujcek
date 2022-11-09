@@ -24,3 +24,6 @@ Require valid-user
 ```
 Vytvoření hesel kupříkladu: http://htaccess.all4all.cz/#a_basic
 
+## Vyplňení údajů v aplikaci
+```
+Pokud je aplikace spuštěna v zařízení s Android 10 a novějším je hutné uvádět adresy s https://
